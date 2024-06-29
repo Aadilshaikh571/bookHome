@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Footer</title>
+  <style>
+    body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+.footer {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 50px 0;
+  text-align: center;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 20px;
+  min-width: 250px;
+}
+
+.footer-section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #ff9900;
+  position: relative;
+}
+
+.footer-section h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #ff9900;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  text-align: center; /* Center-aligning the list */
+}
+
+.footer-section ul li {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center; /* Center-aligning the list items */
+  align-items: center;
+}
+
+.footer-section ul li i {
+  margin-right: 10px;
+  color: #ff9900;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #ff9900;
+}
+
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media a {
+  color: #ccc;
+  margin: 0 10px;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-media a:hover {
+  color: #ff9900;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  background-color: #111;
+  padding: 15px 0;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #ccc;
+  border-top: 1px solid #333;
+}
+
+.footer-bottom span {
+  color: #ff9900;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .footer-section {
+    margin: 10px 0;
+  }
+
+  .footer-section ul {
+    text-align: left; /* Aligning the list to the left on smaller screens */
+  }
+
+  .footer-section ul li {
+    justify-content: flex-start; /* Aligning list items to the start on smaller screens */
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Other content of the page -->
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>About Us</h2>
+        <p>We are a team of passionate developers dedicated to creating beautiful and functional websites. Our goal is to provide high-quality, aesthetically pleasing solutions that meet your needs.</p>
+        <div class="social-media">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section links">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact">
+        <h2>Contact Us</h2>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> 123 Street, City, Country</li>
+          <li><i class="fas fa-phone"></i> +123 456 7890</li>
+          <li><i class="fas fa-envelope"></i> info@example.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 YourCompany | Designed by You
+    </div>
+  </footer>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

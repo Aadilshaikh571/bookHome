@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar Example</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom CSS for Navbar -->
+  <style>
+    /* Custom Navbar Styling */
+    .container {
+      background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+      backdrop-filter: blur(3px); /* Apply 10px blur effect to the background */
+      transition: background-color 0.3s, backdrop-filter 0.3s; /* Smooth transition */
+      margin-bottom: 40px;
+    }
+    .navbar-brand img {
+      height: 40px; /* Adjust height as needed */
+      width: auto; /* Maintain aspect ratio */
+      margin-right: 10px; /* Optional margin for spacing */
+      border-radius: 50%; /* Make the image rounded */
+      transition: transform 0.3s; /* Smooth transition for hover effect */
+    }
+    .navbar-brand img:hover {
+      transform: scale(1.1); /* Slightly enlarge the image on hover */
+    }
+    .navbar-brand,
+    .nav-link {
+      color: #212529 !important; /* Dark text color for navbar links */
+      font-weight: bold;
+      transition: color 0.3s; /* Smooth transition */
+    }
+    .navbar-brand:hover,
+    .nav-link:hover {
+      color: #007bff !important; /* Primary color on hover */
+      text-decoration: none; /* Remove underline */
+    }
+    .btn-black {
+      color: #ffffff; /* Light text color for buttons */
+      background-color: #212529; /* Dark background color */
+      border-color: #212529; /* Dark border color */
+      transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+      
+    }
+    .btn-black:hover {
+      background-color: #343a40; /* Darker background on hover */
+      color: #ffffff; /* Light text color on hover */
+    }
+    .search-bar {
+      max-width: 300px; /* Adjust the max-width as needed */
+      margin-right: 20px; /* Adjust margin for spacing */
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="https://img.freepik.com/premium-vector/mobile-travel-logo-design-template-travel-go-logo-template-design-vector_617472-4347.jpg?w=740" alt="Logo" /> <!-- Example image link -->
+        TravelNest
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="/new" class="btn btn-sm btn-primary shadow"><i class="fas fa-plus-circle"></i> Create New Place</a>
+          </li>
+        </ul>
+        <% if (!currUser) { %>
+          <a href="/login" class="btn btn-black ml-3">Login</a>
+          <a href="/signup" class="btn btn-black ml-3">Sign Up</a>
+        <% } else { %>
+          <form action="/logout" method="get" style="display: inline;">
+            <button type="submit" class="btn btn-black ml-3">Logout</button>
+          </form>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bootstrap JS for toggling -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>

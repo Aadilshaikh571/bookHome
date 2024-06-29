@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: linear-gradient(135deg, #c3cfe2, #f5f7fa);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        animation: backgroundAnimation 10s infinite alternate;
+      }
+
+      @keyframes backgroundAnimation {
+        0% {
+          background: linear-gradient(135deg, #c3cfe2, #f5f7fa);
+        }
+        100% {
+          background: linear-gradient(135deg, #8e9eab, #eef2f3);
+        }
+      }
+
+      .container {
+        background: rgba(0, 0, 0, 0.7); /* Transparent dark background */
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px); /* Blur effect */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        font-size: 2.5em;
+        color: #fff;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #007bff;
+        z-index: 1;
+      }
+
+      h1 i {
+        margin-right: 10px;
+        color: #007bff;
+      }
+
+      form {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      input,
+      button {
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        border: 2px solid #007bff;
+        border-radius: 30px;
+        font-size: 1.1em;
+        width: calc(100% - 40px);
+        box-sizing: border-box;
+        transition: border-color 0.3s, transform 0.3s;
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+
+      input:focus,
+      button:hover {
+        border-color: #0056b3;
+        transform: translateY(-2px);
+      }
+
+      input::placeholder {
+        color: #999;
+      }
+
+      button {
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 8px 15px rgba(0, 123, 255, 0.4);
+        position: relative;
+        overflow: hidden;
+      }
+
+      button::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translate(-50%, -50%) rotate(45deg);
+        transition: width 0.3s, height 0.3s, transform 0.3s;
+        z-index: -1;
+      }
+
+      button:hover::before {
+        width: 0;
+        height: 0;
+      }
+
+      button span {
+        position: relative;
+        z-index: 1;
+      }
+
+      .form-group {
+        position: relative;
+        width: 100%;
+      }
+
+      .form-group i {
+        position: absolute;
+        top: 50%;
+        right: 25px;
+        transform: translateY(-50%);
+        color: #007bff;
+        transition: color 0.3s, transform 0.3s;
+      }
+
+      input:focus + i {
+        color: #0056b3;
+        transform: translateY(-50%) scale(1);
+        
+      }
+      .fas{
+        margin-right: 20px;
+      }
+
+      .back-button {
+        padding: 12px 25px;
+        background: linear-gradient(45deg, #28a745, #218838);
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+        box-shadow: 0 8px 15px rgba(40, 167, 69, 0.4);
+        margin-top: 20px;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .back-button:hover {
+        background: linear-gradient(45deg, #218838, #28a745);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 20px rgba(40, 167, 69, 0.5);
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 30px;
+        }
+
+        h1 {
+          font-size: 2em;
+        }
+
+        input,
+        button {
+          font-size: 1em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    
+
+
+
+    
+    <div class="container">
+      <!-- Example of displaying flash messages -->
+<% if (success) { %>
+  <div class="alert alert-success">
+    <%= success %>
+  </div>
+<% } %>
+
+<% if (error) { %>
+  <div class="alert alert-danger">
+    <%= error %>
+  </div>
+<% } %>
+      <h1><i class="fas fa-user-plus"></i> Sign Up</h1>
+      <form action="/signup" method="POST">
+        <div class="form-group">
+          <input type="text" name="username" placeholder="Username" required />
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email" required /> 
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <i class="fas fa-lock"></i>
+        </div>
+        <button type="submit"><span>Sign Up</span></button>
+      </form>
+      <a href="/" class="back-button"
+        ><i class="fas fa-arrow-left"></i> Back to Home</a
+      >
+    </div>
+
+    <!-- Background image container -->
+    <div
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      "
+    >
+      <!-- <img
+        src="https://th.bing.com/th/id/R.484c09f986b8beaf73274b5150465b0a?rik=PMiXTqvS8bnc7g&riu=http%3a%2f%2fimages.unsplash.com%2fphoto-1507149677524-254e3ebb240f%3fixlib%3drb-1.2.1%26q%3d80%26fm%3djpg%26crop%3dentropy%26cs%3dtinysrgb%26w%3d1080%26fit%3dmax&ehk=GQ5A8bRhdmYXV3ru%2bSc3FZo95BTlr1HIBsFobJAd3wU%3d&risl=&pid=ImgRaw&r=0"
+        alt="Background Image"
+        style="object-fit: cover; width: 100%; height: 100%"
+      /> -->
+    </div>
+  </body>
+</html>
